@@ -16,7 +16,7 @@ class GraphAL:
        fila.append(arco)
         
     def getWeight(self, source, destination):   
-      return self.arregloDeListas[source-1][destination-1] #Solo la segunda Componente
+      return self.arregloDeListas[source-1][destination-1] 
       
 
     def getSuccessors(self, vertice):
@@ -41,7 +41,12 @@ for i in range (n_edges):
 
 print(graph.arregloDeListas)
 #print(graph.getWeight(1,1))
-print("Successors: ")
-print(graph.getSuccessors(4))
+#print("Successors: ")
+#print(graph.getSuccessors(4))
 
-
+print("Check if there is a path from point A to point B")
+A = int(input("Point A: "))
+B = int(input("Point B: "))
+if graph.getWeight(A,B) is not None: #EVITAR EL ERROR
+  print("True")
+else: print("False")
