@@ -36,3 +36,10 @@ print(graph.matriz)
 print(graph.getWeight(1,1))
 #print("Successors: 1")
 #print(graph.getSuccessors(4))
+
+print("Check if there is a path from point A to point B")
+A = int(input("Point A: "))
+B = int(input("Point B: "))
+if graph.getWeight(A,B) is not 0:
+  print("True")
+else: print("False")
