@@ -20,11 +20,18 @@ class GraphAL:
       
 
     def getSuccessors(self, vertice):
-        for i in range(0,vertice):
-            successors = self.arregloDeListas
-            return successors
-       
+      successors = self.arregloDeListas[vertice-1]
+      return successors
 
+    def verify_path(self):
+      print("Check if there is a path from point A to point B")
+      A = int(input("Point A: "))
+      B = int(input("Point B: "))
+      if self.getSuccessors(A) is not None: 
+        if self.arregloDeListas[A][0] == B:
+          print("True")
+      else: print("False")
+      
 
 size = int(input("Número de vértices del grafo:"))
 n_edges =int(input("Número de aristas del grafo:")) 
@@ -40,13 +47,5 @@ for i in range (n_edges):
   graph.addArc(source, destination, weight)
 
 print(graph.arregloDeListas)
-#print(graph.getWeight(1,1))
-#print("Successors: ")
-#print(graph.getSuccessors(4))
+print(graph.verify_path())
 
-print("Check if there is a path from point A to point B")
-A = int(input("Point A: "))
-B = int(input("Point B: "))
-if graph.getWeight(A,B) is not None: #EVITAR EL ERROR
-  print("True")
-else: print("False")
