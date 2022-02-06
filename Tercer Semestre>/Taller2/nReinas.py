@@ -1,3 +1,5 @@
+
+
 def n_reinas(n : int, cadena_ppal = "0"):
    for i in range(0, n-1):
       cadena_ppal += str(i+1)
@@ -50,12 +52,13 @@ def verificar_diagonales(arreglo_de_coordenadas):
       
   return lista_final
 
-def comprimir_reinas(lista_final):
+def comprimir_reinas(lista_final, n):
   for i in range(0, len(lista_final)):
     cadena = ""
     for j in range (0, len(lista_final[i])):
       cadena += str(lista_final[i][j][1]) 
-    print(cadena) 
+    if len(cadena)==n:
+      print(cadena) 
 
 
 
@@ -73,7 +76,7 @@ def main():
    print(verificar_diagonales(lista_de_coordenadas))
    lista_final = verificar_diagonales(lista_de_coordenadas)
    print("\n TABLEROS POSIBLES PARA n = ", n)
-   comprimir_reinas(lista_final)
+   comprimir_reinas(lista_final, n)
 
 
 main()
